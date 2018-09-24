@@ -11,13 +11,20 @@ There are other design goals, but these are the big 3. Also, as a preference, I'
 
 ## How to use
 
-    // you can instantiate your own Lexer...
+    // "easy" way:
+    $syntax_tree = MySQLParser\Parser::parse_string("SELECT 1;");
+
+    // "hard" way:
     $lexer = new MySQLParser\Lexer("SELECT 1;");
     $syntax_tree = MySQLParser\Parser::parse($lexer);
-    // ...use syntax tree... //
     
-    // or, simply do:
-    $syntax_tree = MySQLParser\Parser::parse_string("SELECT 1;");
-    // ...use syntax tree... //
-
+    
 ## How to install
+Pretty easy:
+
+    git clone https://github.com/jameslaydigital/php_mysql_parser
+    ## in PHP... #
+    require("MySQLParser.php");
+
+## Additional Notes
+This library is currently not finished, and even when it is, it will not be optimized for performance for some time.  I want to get this thing up and running with minimal effort.
